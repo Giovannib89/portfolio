@@ -1,0 +1,165 @@
+@use 'src/styles/vars' as v;
+
+.moi{
+  display: grid; 
+  grid-template-columns: 1em 1fr 1em; 
+  grid-template-rows: 4em 15em 4em 8em 3em 3em 3em 3em 4em 4em; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". photoDiv ."
+    ". helloDiv ."
+    ". descDiv ."
+    ". nomDiv ."
+    ". jobDiv ."
+    ". ageDiv ."
+    ". villeDiv ."
+    ". cvDiv ."
+    ". . ."; 
+  height: 53em;
+  background-color: white;
+  &__photo{
+    &__pictureMe{
+      background-image: v.$pictureMe;
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 100px;
+    }
+  }
+  &__hello{
+    &__text{
+      font-weight: bold;
+      font-size: 2em;
+    }
+  }
+  &__description{
+    border-bottom: 3px solid v.$grey-color;
+    margin-bottom: v.$gutter;
+    &__text{
+      font-style: oblique;
+      color: v.$grey-color;
+      line-height: 1.3;
+      font-size: 1.1em;
+    }
+  }
+  &__nom{
+    &__text{
+      color: v.$grey-color;
+      font-size: 1.2em;
+    }
+  }
+  &__job{
+    padding-top: -20px ;
+    &__text{
+      color: v.$grey-color;
+      font-size: 1.2em;
+    }
+  }
+  &__age{
+    &__text{
+      color: v.$grey-color;
+      font-size: 1.2em;
+    }
+  }
+  &__ville{
+    &__text{
+      color: v.$grey-color;
+      font-size: 1.2em;
+    }
+  }
+  &__cv{
+    background-color: v.$red-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 80%;
+    margin-top: v.$gutter;
+    &__lien{
+      color: white;
+      font-size: 1.3em;
+    }
+  }
+}
+
+strong{
+  font-weight: bold;
+  color: black;
+}
+
+.photoDiv {
+  justify-self: center; 
+  align-self: center; 
+  grid-area: photoDiv; 
+}
+.helloDiv {
+  align-self: center; 
+  grid-area: helloDiv; 
+}
+.descDiv { grid-area: descDiv; }
+.nomDiv {
+  align-self: center; 
+  grid-area: nomDiv; 
+}
+.jobDiv {
+  align-self: center; 
+  grid-area: jobDiv; 
+}
+.ageDiv {
+  align-self: center; 
+  grid-area: ageDiv; 
+}
+.villeDiv {
+  align-self: center; 
+  grid-area: villeDiv; 
+}
+.cvDiv {
+  align-self: center; 
+  grid-area: cvDiv; 
+  width: 50%; 
+}
+
+
+@media (min-width: 1285px){
+  .moi{
+    display: grid; 
+  grid-template-columns: 8em 1fr 1fr 1fr 8em; 
+  grid-template-rows: 15em 4em 5em 3em 3em 4em 21em; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."
+    ". photoDiv helloDiv . ."
+    ". photoDiv descDiv descDiv ."
+    ". photoDiv nomDiv jobDiv ."
+    ". photoDiv ageDiv villeDiv ."
+    ". photoDiv cvDiv . ."
+    ". . . . ."; 
+  height: 55em; 
+    background-color: white;
+    &__photo{
+      height: 800px;
+      &__pictureMe{
+        background-image: v.$pictureMe;
+          width: 300px;
+          height: 300px;
+          background-size: cover;
+          background-position: center;
+          border-radius: 150px;
+      }
+    }
+  }
+  
+  .photoDiv { 
+    grid-area: photoDiv;
+    align-self: inherit; 
+  }
+  .helloDiv { grid-area: helloDiv; }
+  .descDiv { grid-area: descDiv; }
+  .nomDiv { grid-area: nomDiv; }
+  .jobDiv { grid-area: jobDiv; }
+  .ageDiv { grid-area: ageDiv; }
+  .villeDiv { grid-area: villeDiv; }
+  .cvDiv { grid-area: cvDiv; }
+}

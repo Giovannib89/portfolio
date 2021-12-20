@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+$picture: url("src/assets/image/workOnComputer.jpg");
+$picturePorfolio: url("src/assets/image/porfolioPicture.jpg");
+$pictureGear: url("src/assets/image/gearPicture.jpg");
+$pictureXp: url("src/assets/image/xpPicture.jpg");
+$picturePhone: url("src/assets/image/phonePicture.jpg");
+$pictureMe: url("src/assets/image/profilPicture.jpg");
+$pictureCompetence: url("src/assets/image/competencePicture.png");
+$primary-color: #191919;
+$grey-color: #9E9E9E;
+$grey2: #868686;
+$black2-color: rgb(46, 46, 46);
+$red-color: #c72424;
+$black-shadow: #292929;
+$black-react: #242424;
+$gutter: 1rem;

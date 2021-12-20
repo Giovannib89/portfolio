@@ -1,0 +1,219 @@
+@use 'src/styles/vars' as v;
+
+.presentation {
+  display: grid; 
+  grid-template-columns: 1em 1fr 1em; 
+  grid-template-rows: 8em 3em 4em 3em 6em 3em 6em 6em 8em; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". mesDiv ."
+    ". nameDiv ."
+    ". jobDiv ."
+    ". . ."
+    ". linkDiv ."
+    ". . ."
+    ". zoneDiv ."
+    ". . ."; 
+  height: 50em; 
+  color: white;
+  &__react{
+    position: absolute;
+    font-size: 20em;
+    top: 200px;
+    right: 0;
+    color: v.$black-react;
+    z-index: 0;
+  }
+  &__message{
+    z-index: 1;
+    &__text{
+      color: v.$grey-color;
+      font-size: 2em;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+  }
+  &__name{
+    z-index: 1;
+    &__text{
+      font-family: 'Audiowide', cursive;
+      font-size: 3.8em;
+      z-index: 1;
+    }
+  }
+  &__job{
+    display: flex;
+    z-index: 1;
+    &__logo {
+      color: v.$red-color;
+      margin-right: 0.5em;
+    }
+    &__text{
+      color: v.$red-color;
+    }
+  }
+  &__link{
+    display: flex;
+    z-index: 1;
+    &__network{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: v.$black-shadow;
+      border-radius: 5px;
+      width: 50px;
+      height: 50px;
+      margin-right: 0.3em;
+      &__logo{
+        font-size: 2em;
+        color: v.$grey-color;
+      }
+    }
+  }
+  &__zone{
+    &__scrollMouse{
+      border: 3px solid v.$grey-color;
+      border-radius: 50px;
+      &__verticalPoint{
+        width: 50px;
+        height: 100px;
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+.mesDiv { grid-area: mesDiv; }
+.nameDiv { grid-area: nameDiv; }
+.jobDiv { grid-area: jobDiv; }
+.linkDiv { grid-area: linkDiv; }
+.zoneDiv {
+  justify-self: center; 
+  grid-area: zoneDiv; 
+}
+
+
+@media (min-width: 430px){
+  .presentation {
+    display: grid; 
+    grid-template-columns: 10em 1fr 10em; 
+    grid-template-rows: 8em 3em 4em 3em 1em 3em 6em 6em 8em; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". mesDiv ."
+      ". nameDiv ."
+      ". jobDiv ."
+      ". . ."
+      ". linkDiv ."
+      ". . ."
+      ". zoneDiv ."
+      ". . ."; 
+    height: 47em;
+  }
+}
+
+@media (min-width: 840px){
+  
+  
+
+}
+
+@media (min-width: 1285px){
+  .presentation {
+    display: grid; 
+    grid-template-columns: 8em 1fr 2em 1fr 8em; 
+    grid-template-rows: 15em 2em 6em 3em 2em 4em 13em 13em 7em; 
+    gap: 0px 1em; 
+    grid-template-areas: 
+      ". . . . ."
+      ". mesDiv . pictureDiv ."
+      ". nameDiv . pictureDiv ."
+      ". jobDiv . pictureDiv ."
+      ". . . pictureDiv ."
+      ". linkDiv . pictureDiv ."
+      ". . . pictureDiv ."
+      ". . zoneDiv . ."
+      ". . . . ."; 
+    height: 65em; 
+    &__react{
+      right: inherit;
+      left: 25%;
+      top: 300px;
+      font-size: 40em;
+      z-index: 0;
+    }
+    &__name{
+      z-index: 1;
+      &__text{
+        font-size: 7em;
+      }
+    }
+    &__picture{
+      z-index: 1;
+      &__computer{
+        background-image: v.$picture;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        
+      }
+    }
+  }
+  .mesDiv { grid-area: mesDiv; }
+  .nameDiv { grid-area: nameDiv; }
+  .jobDiv { grid-area: jobDiv; }
+  .linkDiv { grid-area: linkDiv; }
+  .pictureDiv { grid-area: pictureDiv; }
+  .zoneDiv {
+    align-self: center; 
+    grid-area: zoneDiv; 
+  }
+
+}
+
+.mouseElem{
+  animation: move_mouse 15s linear 0s infinite normal none;
+}
+
+@keyframes move_mouse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateY(-8px);
+  }
+
+  20%,
+  40%,
+  60% {
+    transform: translateY(8px);
+  }
+
+  80% {
+    transform: translateY(6.4px);
+  }
+
+  90% {
+    transform: translateY(-6.4px);
+  }
+}
+.reactElement{
+  animation: move_react 25s linear 0s infinite normal none;
+}
+
+@keyframes move_react {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

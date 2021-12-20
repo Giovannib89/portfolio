@@ -1,0 +1,99 @@
+@use 'src/styles/vars' as v;
+
+.header{
+  visibility: hidden;
+  position: fixed;
+  display: grid;
+  top: 0;
+  left: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  z-index: 2;
+  
+  &__elem{
+    text-align: center;
+    padding: v.$gutter*1.1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &__background{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index:0;
+      transition: 1s;
+    }
+    &__background:hover{
+      background-color: v.$red-color;
+    }
+    &__text{
+      z-index: 3;
+      position: relative;
+      background-color: transparent;
+      color: white;
+      margin: auto;
+    }
+  }
+}
+.porfolio{
+  background-image: v.$picturePorfolio;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.skill{
+  background-image: v.$pictureGear;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.xp{
+  background-image: v.$pictureXp;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.contact{
+  background-image: v.$picturePhone;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.name{
+  background-color: white;
+}
+.me{
+  text-align: left;
+  margin-left: v.$gutter*0.5;
+  color: v.$red-color;
+  margin-bottom: v.$gutter*0.3;
+  &__gio{
+    color: black;
+    font-family: 'Audiowide', cursive;
+    margin-left: v.$gutter*0.5;
+  }
+}
+@media (min-width: 430px){
+
+  .header{
+    visibility: inherit;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  .me{
+    &__gio{
+      text-align: left;
+      height: 20px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@use 'src/styles/vars' as v;
+
+.skills {
+  background-color: #f7f7f7;
+  display: grid; 
+  grid-template-columns: 1em 1fr 1em; 
+  grid-template-rows: 8em 0.4fr 1.3fr 3em; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". titleDiv ."
+    ". barDiv ."
+    ". . ."; 
+  height: 55em;
+  &__title{
+    &__h2{
+      color: v.$red-color;
+      margin-bottom: v.$gutter;
+    }
+    &__h1{
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: v.$gutter*2
+    }
+    &__p{
+      color: v.$grey-color;
+    }
+  }
+  &__progressBar{
+    &__text{
+      color: v.$grey-color;
+      margin-bottom: v.$gutter;
+    }
+  }
+}
+.titleDiv { grid-area: titleDiv; }
+.barDiv { grid-area: barDiv; }
+
+@media (min-width: 1285px){
+  .skills {
+    display: grid;
+    grid-template-columns: 8em 1fr 3em 1fr 8em;
+    grid-template-rows: 3em 0.5fr 1fr 5em;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . . ."
+      ". titleDiv . pictureDiv ."
+      ". barDiv . pictureDiv ."
+      ". . . . .";
+    height: 50em;
+    &__title{
+      &__h2{
+        font-size: 1.5em;
+      }
+      &__h1{
+        font-size: 3em;
+        margin-bottom: v.$gutter*4;
+      }
+      &__p{
+        font-size: 1.5em;
+      }
+    }
+    &__progressBar{
+      &__text{
+        font-size: 1.5em;
+      }
+    }
+    &__picture{
+      display: flex;
+      justify-content: end;
+      align-items: flex-start;
+      &__competence{
+        background-image: v.$pictureCompetence;
+        width: 90%;
+        height: 90%;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+  .titleDiv { grid-area: titleDiv; }
+  
+  .barDiv { grid-area: barDiv; }
+  
+  .pictureDiv { grid-area: pictureDiv; }
+  
+}

@@ -1,0 +1,47 @@
+@use 'src/styles/vars' as v;
+
+.portfolio {
+  display: grid; 
+  grid-template-columns: 1em 1fr 1em; 
+  grid-template-rows: 3em 1fr 3em; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". constDiv ."
+    ". . ."; 
+  height: 55em; 
+  background-color: v.$primary-color;
+  &__titre{
+    font-size: 3em;
+    text-align: center;
+    color: white;
+  }
+}
+.constDiv {
+  justify-self: center; 
+  align-self: center; 
+  grid-area: constDiv; 
+}
+
+@media (min-width: 1285px){
+  .portfolio {
+    display: grid; 
+    grid-template-columns: 8em 1fr 8em; 
+    grid-template-rows: 15em 1fr 21em; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". constDiv ."
+      ". . ."; 
+    height: 55em;
+    &__titre{
+      font-size: 10em;
+      text-align: center;
+    }
+  }
+  .constDiv {
+    justify-self: center; 
+    align-self: center; 
+    grid-area: constDiv; 
+  }
+}
