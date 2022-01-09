@@ -1,0 +1,52 @@
+@use 'src/styles/vars' as v;
+
+.contact {  display: grid;
+  grid-template-columns: 1em 1fr 1em;
+  grid-template-rows: 4em 0.5fr 0.2fr 2.9fr 0.4fr 4em;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". title ."
+    ". intro ."
+    ". row ."
+    ". button ."
+    ". . .";
+}
+
+.title {
+  justify-self: center;
+  grid-area: title;
+}
+
+.intro {
+  justify-self: center;
+  grid-area: intro;
+}
+
+.button {
+  justify-self: center;
+  grid-area: button;
+}
+
+.row {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 0.4fr 0.4fr 3.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "lastname"
+    "firstname"
+    "mail"
+    "message";
+  justify-self: center;
+  grid-area: row;
+}
+
+.lastname { grid-area: lastname; }
+
+.firstname { grid-area: firstname; }
+
+.mail { grid-area: mail; }
+
+.message { grid-area: message; }

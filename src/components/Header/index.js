@@ -36,7 +36,7 @@ export default function Header() {
         <div className="header__elem__background" />
         <p className="header__elem__text">Expérience & Formation</p>
       </div>
-      <div className="header__elem contact">
+      <div className="header__elem contacts">
         <div className="header__elem__background" />
         <p className="header__elem__text">Contact</p>
       </div>
